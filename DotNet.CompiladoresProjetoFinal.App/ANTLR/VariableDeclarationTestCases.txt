@@ -1,0 +1,20 @@
+### Válidas
+int a;
+float x = 3.14;
+char c = 'z';
+char texto = "Hello, world!";
+int a, b, c;
+float tempo, velocidade = 27.3, distancia;
+char simbolo;
+
+
+### Inválidas
+int 3a;
+float x = ;
+char = 'a';
+double d = 1.0;
+int a b;
+char c = "abc
+char c = 'ab';
+char nome = 'abc';
+float x, = 3.5;
