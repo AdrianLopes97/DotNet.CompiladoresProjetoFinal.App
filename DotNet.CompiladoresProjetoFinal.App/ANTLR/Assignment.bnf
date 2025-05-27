@@ -1,0 +1,49 @@
+<declaration> ::= <typeSpecifier> <declaratorList> ";"
+
+<typeSpecifier> ::= "char"
+                 | "int"
+                 | "float"
+
+<declaratorList> ::= <declarator>
+                   | <declarator> "," <declaratorList>
+
+<declarator> ::= <Identifier>
+              | <Identifier> "=" <initializer>
+
+<initializer> ::= <CHAR_LITERAL>
+               | <STRING_LITERAL>
+               | <IntegerLiteral>
+               | <FloatingLiteral>
+
+<Identifier> ::= <letter_or_underscore> <letter_digit_underscore_sequence>
+
+<letter_or_underscore> ::= "a" | "b" | ... | "z" | "A" | "B" | ... | "Z" | "_"
+
+<letter_digit_underscore_sequence> ::= ε
+                                     | <letter_digit_underscore> <letter_digit_underscore_sequence>
+
+<letter_digit_underscore> ::= <letter_or_underscore> | "0" | "1" | ... | "9"
+
+<CHAR_LITERAL> ::= "'" <char_or_escape> "'"
+
+<STRING_LITERAL> ::= "\"" <string_content> "\""
+
+<string_content> ::= ε
+                   | <char_or_escape> <string_content>
+
+<char_or_escape> ::= qualquer caractere exceto '\r', '\n', '\'', '\\'
+                   | <EscapeSequence>
+
+<EscapeSequence> ::= "\\" "b"
+                   | "\\" "t"
+                   | "\\" "n"
+                   | "\\" "r"
+                   | "\\" "\""
+                   | "\\" "\\"
+                   | "\\" "'"
+
+<IntegerLiteral> ::= <digit>+
+<FloatingLiteral> ::= <digit>+ "." <digit>*
+                    | "." <digit>+
+
+<digit> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
