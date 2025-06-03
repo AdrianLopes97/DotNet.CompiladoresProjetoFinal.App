@@ -7,14 +7,10 @@ int a, b, c;
 float tempo, velocidade = 27.3, distancia;
 char simbolo;
 
+if(a > 0) { x = x + 1; } else { x = x - 1; }
 
-### Inválidas
-int 3a;
-float x = ;
-char = 'a';
-double d = 1.0;
-int a b;
-char c = "abc
-char c = 'ab';
-char nome = 'abc';
-float x, = 3.5;
+switch(a) {
+    case b: { x = x * 2; break; }
+    case c: { x = x / 2; break; }
+    default: { x = 0; }
+}

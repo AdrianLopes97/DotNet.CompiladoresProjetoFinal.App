@@ -1,0 +1,18 @@
+### Inválidas
+int 3a;
+float x = ;
+char = 'a';
+double d = 1.0;
+int a b;
+char c = "abc
+char c = 'ab';
+char nome = 'abc';
+float x, = 3.5;
+
+// if inválido (falta condição)
+if() { x = 1; }
+
+// switch-case inválido (falta break)
+switch(a) {
+    case b: { x = 1; }
+}

@@ -12,8 +12,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="ANTLR\VariableDeclarationTestCases.txt">
+    <None Update="ANTLR\InvalidTestCases.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ANTLR\ValidTestCases.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+
 </Project>

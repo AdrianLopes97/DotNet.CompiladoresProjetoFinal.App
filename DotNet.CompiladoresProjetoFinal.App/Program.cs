@@ -5,26 +5,30 @@ class Program
 {
     static void Main(string[] args)
     {
-        string filePath = Path.Combine("ANTLR", "VariableDeclarationTestCases.txt");
+        string[] testFiles = new string[] {
+            Path.Combine("ANTLR", "ValidTestCases.txt"),
+            Path.Combine("ANTLR", "InvalidTestCases.txt")
+        };
 
-        if (!File.Exists(filePath))
+        foreach (var filePath in testFiles)
         {
-            Console.WriteLine($"Arquivo não encontrado: {filePath}");
-            return;
-        }
-
-        var lines = File.ReadAllLines(filePath);
-        int lineNumber = 0;
-
-        foreach (var rawLine in lines)
-        {
-            var input = rawLine.Trim();
-
-            // Ignora linhas em branco e comentários
-            if (string.IsNullOrWhiteSpace(input) || input.StartsWith("#"))
+            if (!File.Exists(filePath))
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine($"Arquivo não encontrado: {filePath}\n");
                 continue;
+            }
+
+            string[] lines = File.ReadAllLines(filePath);
+            var codeLines = lines
+                .Where(l => !string.IsNullOrWhiteSpace(l) && !l.TrimStart().StartsWith("#"))
+                .ToList();
+
+            string input = string.Join("\n", codeLines);
+
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine($"Linha {lineNumber}: {input}");
+            Console.WriteLine($"\n===== Analisando: {Path.GetFileName(filePath)} =====\n");
+            Console.WriteLine(input);
 
             AntlrInputStream inputStream = new AntlrInputStream(input);
             VariableDeclarationLexer lexer = new VariableDeclarationLexer(inputStream);
@@ -36,19 +40,19 @@ class Program
 
             try
             {
-                var tree = parser.declaration();
+                var tree = parser.program();
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("Válida");
+                Console.WriteLine("\nArquivo válido!");
                 Console.WriteLine(tree.ToStringTree(parser));
             }
             catch (Exception e)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Inválida: " + e.Message);
+                Console.WriteLine("\nArquivo inválido: " + e.Message);
             }
-            lineNumber++;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("\n==============================================\n");
         }
-        Console.ForegroundColor = ConsoleColor.White;
         Console.WriteLine("Pressione qualquer tecla para sair...");
         Console.ReadKey();
     }
