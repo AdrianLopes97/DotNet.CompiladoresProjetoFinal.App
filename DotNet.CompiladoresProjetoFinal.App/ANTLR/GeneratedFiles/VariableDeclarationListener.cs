@@ -31,6 +31,16 @@ using IToken = Antlr4.Runtime.IToken;
 [System.CLSCompliant(false)]
 public interface IVariableDeclarationListener : IParseTreeListener {
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="VariableDeclarationParser.program"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterProgram([NotNull] VariableDeclarationParser.ProgramContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="VariableDeclarationParser.program"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitProgram([NotNull] VariableDeclarationParser.ProgramContext context);
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="VariableDeclarationParser.declaration"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -40,6 +50,116 @@ public interface IVariableDeclarationListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitDeclaration([NotNull] VariableDeclarationParser.DeclarationContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="VariableDeclarationParser.selectionStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterSelectionStatement([NotNull] VariableDeclarationParser.SelectionStatementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="VariableDeclarationParser.selectionStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitSelectionStatement([NotNull] VariableDeclarationParser.SelectionStatementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="VariableDeclarationParser.switchStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterSwitchStatement([NotNull] VariableDeclarationParser.SwitchStatementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="VariableDeclarationParser.switchStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitSwitchStatement([NotNull] VariableDeclarationParser.SwitchStatementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="VariableDeclarationParser.caseBlockList"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterCaseBlockList([NotNull] VariableDeclarationParser.CaseBlockListContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="VariableDeclarationParser.caseBlockList"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitCaseBlockList([NotNull] VariableDeclarationParser.CaseBlockListContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="VariableDeclarationParser.caseBlock"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterCaseBlock([NotNull] VariableDeclarationParser.CaseBlockContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="VariableDeclarationParser.caseBlock"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitCaseBlock([NotNull] VariableDeclarationParser.CaseBlockContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="VariableDeclarationParser.defaultBlock"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterDefaultBlock([NotNull] VariableDeclarationParser.DefaultBlockContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="VariableDeclarationParser.defaultBlock"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitDefaultBlock([NotNull] VariableDeclarationParser.DefaultBlockContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="VariableDeclarationParser.commandList"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterCommandList([NotNull] VariableDeclarationParser.CommandListContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="VariableDeclarationParser.commandList"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitCommandList([NotNull] VariableDeclarationParser.CommandListContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="VariableDeclarationParser.breakCommand"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterBreakCommand([NotNull] VariableDeclarationParser.BreakCommandContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="VariableDeclarationParser.breakCommand"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitBreakCommand([NotNull] VariableDeclarationParser.BreakCommandContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="VariableDeclarationParser.mathCommand"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterMathCommand([NotNull] VariableDeclarationParser.MathCommandContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="VariableDeclarationParser.mathCommand"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitMathCommand([NotNull] VariableDeclarationParser.MathCommandContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="VariableDeclarationParser.mathExpr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterMathExpr([NotNull] VariableDeclarationParser.MathExprContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="VariableDeclarationParser.mathExpr"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitMathExpr([NotNull] VariableDeclarationParser.MathExprContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="VariableDeclarationParser.condition"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterCondition([NotNull] VariableDeclarationParser.ConditionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="VariableDeclarationParser.condition"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitCondition([NotNull] VariableDeclarationParser.ConditionContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="VariableDeclarationParser.relOp"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterRelOp([NotNull] VariableDeclarationParser.RelOpContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="VariableDeclarationParser.relOp"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitRelOp([NotNull] VariableDeclarationParser.RelOpContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="VariableDeclarationParser.typeSpecifier"/>.
 	/// </summary>

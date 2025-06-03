@@ -1,0 +1,28 @@
+### Válidas
+int a;
+float x = 3.14;
+char c = 'z';
+char texto = "Hello, world!";
+int a, b, c;
+float tempo, velocidade = 27.3, distancia;
+char simbolo;
+
+if(a > 0) {
+    x = x + 1; 
+} else {
+    x = x - 1;
+}
+
+switch(a) {
+    case b: {
+        x = x * 2; 
+        break; 
+    }
+    case c: {
+        x = x / 2; 
+        break;
+    }
+    default: {
+        x = 0;
+    }
+}

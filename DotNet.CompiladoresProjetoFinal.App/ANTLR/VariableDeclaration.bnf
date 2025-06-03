@@ -1,4 +1,48 @@
+
+<program> ::= (<declaration> | <selectionStatement>)*
+
 <declaration> ::= <typeSpecifier> <declaratorList> ";"
+
+<selectionStatement> ::= <ifStatement>
+                      | <switchStatement>
+
+<ifStatement> ::= "if" "(" <condition> ")" "{" <commandList> "}" <elsePart>
+
+<elsePart> ::= "else" "{" <commandList> "}"
+            | ε
+
+<switchStatement> ::= "switch" "(" <Identifier> ")" "{" <caseBlockList> <defaultBlock> "}"
+
+<caseBlockList> ::= <caseBlock>+
+
+<caseBlock> ::= <caseLabels> "{" <commandList> "}"
+
+<caseLabels> ::= <caseLabel>+
+
+<caseLabel> ::= "case" <Identifier> ":"
+
+<defaultBlock> ::= "default" ":" "{" <commandList> "}"
+                | ε
+
+<commandList> ::= (<mathCommand> | <breakCommand>)*
+
+<breakCommand> ::= "break" ";"
+
+<mathCommand> ::= <Identifier> "=" <mathExpr> ";"
+
+<mathExpr> ::= <mathExpr> <mulOp> <mathExpr>
+            | <mathExpr> <addOp> <mathExpr>
+            | <IntegerLiteral>
+            | <FloatingLiteral>
+            | <Identifier>
+            | "(" <mathExpr> ")"
+
+<mulOp> ::= "*" | "/"
+<addOp> ::= "+" | "-"
+
+<condition> ::= <mathExpr> <relOp> <mathExpr>
+
+<relOp> ::= "==" | "!=" | "<" | "<=" | ">" | ">="
 
 <typeSpecifier> ::= "char"
                  | "int"

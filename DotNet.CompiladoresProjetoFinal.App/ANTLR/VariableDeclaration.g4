@@ -1,7 +1,71 @@
 grammar VariableDeclaration;
 
+program
+    : (declaration | selectionStatement)*
+    ;
+
 declaration
     : typeSpecifier declaratorList SEMI
+    ;
+
+// Comando if-else
+selectionStatement
+    : IF LPAREN condition RPAREN LBRACE commandList RBRACE (ELSE LBRACE commandList RBRACE)?
+    | switchStatement
+    ;
+
+// Comando switch-case
+switchStatement
+    : SWITCH LPAREN Identifier RPAREN LBRACE caseBlockList (defaultBlock)? RBRACE
+    ;
+
+caseBlockList
+    : caseBlock+
+    ;
+
+caseBlock
+    : (CASE Identifier COLON)+ LBRACE commandList RBRACE
+    ;
+
+defaultBlock
+    : DEFAULT COLON LBRACE commandList RBRACE
+    ;
+
+// Lista de comandos matemáticos simples
+commandList
+    : (mathCommand | breakCommand)*
+    ;
+
+breakCommand
+    : BREAK SEMI
+    ;
+
+mathCommand
+    : Identifier ASSIGN mathExpr SEMI
+    ;
+
+// Expressão matemática simples
+mathExpr
+    : mathExpr op=('*'|'/') mathExpr
+    | mathExpr op=('+'|'-') mathExpr
+    | IntegerLiteral
+    | FloatingLiteral
+    | Identifier
+    | LPAREN mathExpr RPAREN
+    ;
+
+// Condição relacional
+condition
+    : mathExpr relOp mathExpr
+    ;
+
+relOp
+    : EQ
+    | NEQ
+    | LT
+    | LTEQ
+    | GT
+    | GTEQ
     ;
 
 typeSpecifier
@@ -29,6 +93,26 @@ CHAR       : 'char';
 INT        : 'int';
 FLOAT      : 'float';
 
+IF         : 'if';
+ELSE       : 'else';
+SWITCH     : 'switch';
+CASE       : 'case';
+DEFAULT    : 'default';
+BREAK      : 'break';
+
+EQ         : '==';
+NEQ        : '!=';
+LTEQ       : '<=';
+GTEQ       : '>=';
+LT         : '<';
+GT         : '>';
+
+LPAREN     : '(';
+RPAREN     : ')';
+LBRACE     : '{';
+RBRACE     : '}';
+COLON      : ':';
+
 SEMI       : ';';
 COMMA      : ',';
 ASSIGN     : '=';
@@ -52,6 +136,13 @@ IntegerLiteral
 FloatingLiteral
     : [0-9]+ '.' [0-9]* | '.' [0-9]+
     ;
+
+// Operadores matemáticos
+// (Os tokens para +, -, *, /)
+PLUS       : '+';
+MINUS      : '-';
+STAR       : '*';
+DIV        : '/';
 
 fragment EscapeSequence
     : '\\' [btnr"\\']
