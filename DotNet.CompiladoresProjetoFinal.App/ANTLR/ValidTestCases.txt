@@ -26,3 +26,23 @@ switch(a) {
         x = 0;
     }
 }
+
+int count = 0;
+while(count < 5) {
+    count = count + 1;
+}
+
+int i;
+for(i = 0; i < 10; i = i + 1) {
+    x = x * i;
+}
+
+float k;
+for(k = 0.0; k < 1.0; k = k + 0.1) {
+    distancia = distancia + k;
+}
+
+int h = 0;
+for(j = 0; j < 3; j++) {
+    h++;
+}

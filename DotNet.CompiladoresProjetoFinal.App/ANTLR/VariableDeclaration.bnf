@@ -1,10 +1,22 @@
-
-<program> ::= (<declaration> | <selectionStatement>)*
+<program> ::= (<declaration> | <selectionStatement> | <repetitionStatement>)*
 
 <declaration> ::= <typeSpecifier> <declaratorList> ";"
 
 <selectionStatement> ::= <ifStatement>
                       | <switchStatement>
+
+<repetitionStatement> ::= <whileStatement>
+                       | <forStatement>
+
+<whileStatement> ::= "while" "(" <condition> ")" "{" <commandList> "}"
+
+<forStatement> ::= "for" "(" <forInit> ";" <condition> ";" <forUpdate> ")" "{" <commandList> "}"
+
+<forInit> ::= <Identifier> "=" <mathExpr>
+
+<forUpdate> ::= <Identifier> "=" <mathExpr>
+             | <Identifier> "++"
+             | <Identifier> "--"
 
 <ifStatement> ::= "if" "(" <condition> ")" "{" <commandList> "}" <elsePart>
 
@@ -24,7 +36,10 @@
 <defaultBlock> ::= "default" ":" "{" <commandList> "}"
                 | ε
 
-<commandList> ::= (<mathCommand> | <breakCommand>)*
+<commandList> ::= (<mathCommand> | <breakCommand> | <incrementDecrementStatement>)*
+
+<incrementDecrementStatement> ::= <Identifier> "++" ";"
+                               | <Identifier> "--" ";"
 
 <breakCommand> ::= "break" ";"
 
