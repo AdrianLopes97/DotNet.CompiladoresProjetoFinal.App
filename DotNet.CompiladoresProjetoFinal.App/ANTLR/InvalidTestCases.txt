@@ -14,3 +14,36 @@ switch(a) {
     case c: { x = x / 2; break; }
     default: { x = 0; }
 }
+
+
+while count < 5) { 
+    count = count + 1;
+}
+
+while (count < 5 { 
+    count = count + 1;
+}
+
+while (count < 5)
+    count = count + 1;
+
+
+
+for (i = 0 i < 10; i = i + 1) { 
+    x = x * i;
+}
+
+for (i = 0; i < 10 i = i + 1) { 
+    x = x * i;
+}
+
+for (i = 0; i < 10; i = i + ) { 
+    x = x * i;
+}
+
+for (i; i < 10; i++) { 
+    x = x * i;
+}
+
+for (i = 0; i < 10; i++ 
+    x = x * i;

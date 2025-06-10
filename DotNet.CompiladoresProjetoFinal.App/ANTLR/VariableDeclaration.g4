@@ -1,7 +1,7 @@
 grammar VariableDeclaration;
 
 program
-    : (declaration | selectionStatement)*
+    : (declaration | selectionStatement | repetitionStatement)* EOF
     ;
 
 declaration
@@ -12,6 +12,28 @@ declaration
 selectionStatement
     : IF LPAREN condition RPAREN LBRACE commandList RBRACE (ELSE LBRACE commandList RBRACE)?
     | switchStatement
+    ;
+
+// Comandos de Repetição
+repetitionStatement
+    : whileStatement
+    | forStatement
+    ;
+
+whileStatement
+    : WHILE LPAREN condition RPAREN LBRACE commandList RBRACE
+    ;
+
+forStatement
+    : FOR LPAREN forInit SEMI condition SEMI forUpdate RPAREN LBRACE commandList RBRACE
+    ;
+
+forInit
+    : Identifier ASSIGN mathExpr // i = 0
+    ;
+
+forUpdate
+    : Identifier (ASSIGN mathExpr | PLUSPLUS | MINUSMINUS) // i = i + 1 OR i++ OR i--
     ;
 
 // Comando switch-case
@@ -33,7 +55,11 @@ defaultBlock
 
 // Lista de comandos matemáticos simples
 commandList
-    : (mathCommand | breakCommand)*
+    : (mathCommand | breakCommand | incrementDecrementStatement)*
+    ;
+
+incrementDecrementStatement // New rule
+    : Identifier (PLUSPLUS | MINUSMINUS) SEMI
     ;
 
 breakCommand
@@ -99,6 +125,8 @@ SWITCH     : 'switch';
 CASE       : 'case';
 DEFAULT    : 'default';
 BREAK      : 'break';
+WHILE      : 'while';
+FOR        : 'for';  
 
 EQ         : '==';
 NEQ        : '!=';
@@ -116,6 +144,8 @@ COLON      : ':';
 SEMI       : ';';
 COMMA      : ',';
 ASSIGN     : '=';
+PLUSPLUS   : '++'; 
+MINUSMINUS : '--'; 
 
 Identifier
     : [a-zA-Z_] [a-zA-Z_0-9]*

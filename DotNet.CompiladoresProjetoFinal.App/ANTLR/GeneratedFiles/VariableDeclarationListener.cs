@@ -61,6 +61,56 @@ public interface IVariableDeclarationListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitSelectionStatement([NotNull] VariableDeclarationParser.SelectionStatementContext context);
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="VariableDeclarationParser.repetitionStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterRepetitionStatement([NotNull] VariableDeclarationParser.RepetitionStatementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="VariableDeclarationParser.repetitionStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitRepetitionStatement([NotNull] VariableDeclarationParser.RepetitionStatementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="VariableDeclarationParser.whileStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterWhileStatement([NotNull] VariableDeclarationParser.WhileStatementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="VariableDeclarationParser.whileStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitWhileStatement([NotNull] VariableDeclarationParser.WhileStatementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="VariableDeclarationParser.forStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterForStatement([NotNull] VariableDeclarationParser.ForStatementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="VariableDeclarationParser.forStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitForStatement([NotNull] VariableDeclarationParser.ForStatementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="VariableDeclarationParser.forInit"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterForInit([NotNull] VariableDeclarationParser.ForInitContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="VariableDeclarationParser.forInit"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitForInit([NotNull] VariableDeclarationParser.ForInitContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="VariableDeclarationParser.forUpdate"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterForUpdate([NotNull] VariableDeclarationParser.ForUpdateContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="VariableDeclarationParser.forUpdate"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitForUpdate([NotNull] VariableDeclarationParser.ForUpdateContext context);
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="VariableDeclarationParser.switchStatement"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -110,6 +160,16 @@ public interface IVariableDeclarationListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitCommandList([NotNull] VariableDeclarationParser.CommandListContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="VariableDeclarationParser.incrementDecrementStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterIncrementDecrementStatement([NotNull] VariableDeclarationParser.IncrementDecrementStatementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="VariableDeclarationParser.incrementDecrementStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitIncrementDecrementStatement([NotNull] VariableDeclarationParser.IncrementDecrementStatementContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="VariableDeclarationParser.breakCommand"/>.
 	/// </summary>

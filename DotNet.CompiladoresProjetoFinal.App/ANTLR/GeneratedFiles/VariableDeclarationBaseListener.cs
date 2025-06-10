@@ -72,6 +72,66 @@ public partial class VariableDeclarationBaseListener : IVariableDeclarationListe
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitSelectionStatement([NotNull] VariableDeclarationParser.SelectionStatementContext context) { }
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="VariableDeclarationParser.repetitionStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterRepetitionStatement([NotNull] VariableDeclarationParser.RepetitionStatementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="VariableDeclarationParser.repetitionStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitRepetitionStatement([NotNull] VariableDeclarationParser.RepetitionStatementContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="VariableDeclarationParser.whileStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterWhileStatement([NotNull] VariableDeclarationParser.WhileStatementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="VariableDeclarationParser.whileStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitWhileStatement([NotNull] VariableDeclarationParser.WhileStatementContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="VariableDeclarationParser.forStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterForStatement([NotNull] VariableDeclarationParser.ForStatementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="VariableDeclarationParser.forStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitForStatement([NotNull] VariableDeclarationParser.ForStatementContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="VariableDeclarationParser.forInit"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterForInit([NotNull] VariableDeclarationParser.ForInitContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="VariableDeclarationParser.forInit"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitForInit([NotNull] VariableDeclarationParser.ForInitContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="VariableDeclarationParser.forUpdate"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterForUpdate([NotNull] VariableDeclarationParser.ForUpdateContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="VariableDeclarationParser.forUpdate"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitForUpdate([NotNull] VariableDeclarationParser.ForUpdateContext context) { }
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="VariableDeclarationParser.switchStatement"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -131,6 +191,18 @@ public partial class VariableDeclarationBaseListener : IVariableDeclarationListe
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitCommandList([NotNull] VariableDeclarationParser.CommandListContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="VariableDeclarationParser.incrementDecrementStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterIncrementDecrementStatement([NotNull] VariableDeclarationParser.IncrementDecrementStatementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="VariableDeclarationParser.incrementDecrementStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitIncrementDecrementStatement([NotNull] VariableDeclarationParser.IncrementDecrementStatementContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="VariableDeclarationParser.breakCommand"/>.
 	/// <para>The default implementation does nothing.</para>
