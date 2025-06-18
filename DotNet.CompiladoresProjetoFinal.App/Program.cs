@@ -1,8 +1,8 @@
 ﻿using Antlr4.Runtime;
 using DotNet.CompiladoresProjetoFinal.App;
-using System.IO; // Added for Path and File operations explicitly
-using System.Text; // Added for StringBuilder
-using System.Text.RegularExpressions; // Added for Regex
+using System.IO;
+using System.Text;
+using System.Text.RegularExpressions;
 
 class Program
 {
